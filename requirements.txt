@@ -3,12 +3,11 @@ langgraph>=0.2.0
 langchain-core>=0.3.0
 langchain-openai>=0.2.0
 
+# LangGraph CLI for development server
+langgraph-cli[inmem]>=0.1.0
+
 # BAML framework for structured LLM outputs
 baml-py>=0.65.0
-
-# API server
-fastapi>=0.104.0
-uvicorn[standard]>=0.24.0
 
 # Data validation and utilities
 pydantic>=2.0.0

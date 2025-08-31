@@ -11,6 +11,8 @@ client LocalLLM {
     base_url env.LM_STUDIO_BASE_URL
     api_key env.LM_STUDIO_API_KEY
     model env.LM_STUDIO_MODEL
+    temperature env.LM_STUDIO_TEMPERATURE
+    max_tokens env.LM_STUDIO_MAX_TOKENS
   }
 }
 

@@ -29,11 +29,8 @@ class Config:
     LM_STUDIO_API_KEY: str = os.getenv("LM_STUDIO_API_KEY", "lm-studio")  # LM Studio doesn't require a real key
     LM_STUDIO_MODEL: str = os.getenv("LM_STUDIO_MODEL", "local-model")  # Default model name
     
-    # Server Settings
-    SERVER_HOST: str = os.getenv("SERVER_HOST", "0.0.0.0")
-    SERVER_PORT: int = int(os.getenv("SERVER_PORT", "2024"))
-    
-    # LangGraph Settings
+    # LangGraph Development Settings
+    LANGGRAPH_DEV_PORT: int = int(os.getenv("LANGGRAPH_DEV_PORT", "2024"))
     THREAD_TIMEOUT: int = int(os.getenv("THREAD_TIMEOUT", "300"))  # 5 minutes
     MAX_ITERATIONS: int = int(os.getenv("MAX_ITERATIONS", "10"))
     
@@ -60,7 +57,7 @@ class Config:
     
     @classmethod
     def get_logging_config(cls) -> dict:
-        """Get logging configuration"""
+        """Get logging configuration for structured logging"""
         return {
             "log_level": cls.LOG_LEVEL,
             "log_to_file": cls.LOG_TO_FILE,

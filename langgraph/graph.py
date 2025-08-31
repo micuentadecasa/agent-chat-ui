@@ -214,10 +214,6 @@ def stream_graph(compiled_graph, messages: List[BaseMessage], thread_id: str = N
         )
         raise
 
-# Create the default compiled graph instance
-try:
-    graph = create_compiled_graph(with_memory=True)
-    graph_logger.info("Default graph instance created successfully")
-except Exception as e:
-    graph_logger.error(f"Failed to create default graph: {e}")
-    graph = None
+# Create the graph instance for langgraph dev
+graph = create_compiled_graph(with_memory=True)
+graph_logger.info("Graph instance created for langgraph dev")

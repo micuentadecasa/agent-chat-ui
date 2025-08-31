@@ -60,15 +60,15 @@ The app automatically shows a setup form when required environment variables are
 The `langgraph/` directory contains a complete Python backend implementation:
 
 ### Architecture
-- **Two-node workflow**: Reasoning Node → BAML Tool Node
-- **BAML Integration**: Structured text analysis using BAML framework tools
+- **Two-node workflow**: Reasoning Node → BAML Analysis Node
+- **BAML Integration**: Direct BAML function calls for structured text analysis
 - **LM Studio Connection**: Local LLM via OpenAI-compatible API
-- **Tool-based Design**: BAML functions implemented as LangChain tools
+- **Simple Design**: Clean BAML function calls without unnecessary abstractions
 - **Comprehensive Logging**: Structured logging with performance tracking
 
 ### Key Commands
-- `cd langgraph && python app.py` - Start LangGraph server on port 2024
-- `baml-cli generate` - Generate BAML client from schema files
+- `cd langgraph && langgraph dev` - Start LangGraph development server on port 2024
+- `cd langgraph && baml-cli generate` - Generate BAML client from schema files
 - `pip install -r requirements.txt` - Install Python dependencies
 
 ### Configuration
@@ -77,4 +77,4 @@ Environment settings in `langgraph/.env`:
 - Server settings (host, port, logging)
 - BAML environment configuration
 
-The LangGraph backend provides structured AI analysis capabilities that complement the Next.js frontend, creating a complete agent chat system.
+The LangGraph backend uses `langgraph dev` for development serving and provides structured AI analysis through direct BAML function calls, creating a simple yet powerful agent chat system that integrates seamlessly with the Next.js frontend.
